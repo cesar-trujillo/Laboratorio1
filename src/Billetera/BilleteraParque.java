@@ -19,7 +19,7 @@ public class BilleteraParque {
     }
 
     public void setTickets(int cantidad){
-        this.tickets += cantidad;
+        this.tickets = cantidad;
     }
 
     //getter y setter festivo
@@ -28,7 +28,7 @@ public class BilleteraParque {
     }
 
     public static void setFestivo(){
-         if(festivo = false){
+         if(festivo == false){
             festivo = true;
         }else{
             festivo = false;
@@ -37,7 +37,16 @@ public class BilleteraParque {
 
     public void agregarTickets(int cantidad){
         if(cantidad > 0){
-            setTickets(cantidad);
+            this.tickets += cantidad;
+        }
+    }
+
+    public boolean removerTickets(int cantidad){
+        if(cantidad > 0 && getTickets() > 0){
+            this.tickets -= cantidad;
+            return true;
+        }else{
+            return false;
         }
     }
   
